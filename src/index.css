@@ -55,7 +55,7 @@ header {
   background-color: var(--tertiaryBackground);
   color: var(--primaryFont);
   border-radius: 5px;
-  padding: 40px 50px;
+  padding: 40px 20px;
   margin: 20px 0;
   position: relative;
 }
@@ -117,7 +117,8 @@ header {
 .input-group {
   display: flex;
   flex-direction: row;
-  border: 1px solid #ccc;
+  border: 2px solid var(--primaryBorder);
+  margin-top: 15px;
   padding: 8px 10px;
   border-radius: 8px;
 }
@@ -126,6 +127,13 @@ input {
   flex-grow: 2;
   border: none;
   font-size: 16px;
+  background-color: transparent;
+  color: var(--primaryFont);
+}
+
+::placeholder {
+  color: var(--primaryFont);
+  opacity: 0.5;
 }
 
 input:focus {
@@ -153,6 +161,7 @@ input:focus {
   cursor: pointer;
   background: none;
   border: none;
+  color: var(--secondaryFont);
 }
 
 .edit {

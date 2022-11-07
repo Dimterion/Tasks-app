@@ -1,7 +1,7 @@
 import { PropTypes } from "prop-types";
 import TaskItem from "./TaskItem";
 
-function TasksList({ tasks }) {
+function TasksList({ tasks, handleDelete }) {
   if (!tasks || tasks.length === 0) {
     return <p>No tasks yet.</p>;
   }
@@ -9,7 +9,11 @@ function TasksList({ tasks }) {
   return (
     <div>
       {tasks.map((taskItem) => (
-        <TaskItem key={taskItem.id} taskItem={taskItem} />
+        <TaskItem
+          key={taskItem.id}
+          taskItem={taskItem}
+          handleDelete={handleDelete}
+        />
       ))}
     </div>
   );
