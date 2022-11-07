@@ -1,13 +1,18 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
-/* Variables */
+/* Color variables */
 :root {
+  /* Backgrounds */
   --primaryBackground: #2b2d42;
   --secondaryBackground: #22223b;
   --tertiaryBackground: #4a4e69;
+
+  /* Fonts */
   --primaryFont: #edf2f4;
   --secondaryFont: #ff006e;
+
+  /* Borders */
   --primaryBorder: #edf2f4;
 }
 
@@ -55,11 +60,6 @@ header {
   position: relative;
 }
 
-.card.reverse {
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
-}
-
 .card h2 {
   font-size: 22px;
   font-weight: 600;
@@ -83,7 +83,7 @@ header {
   text-align: center;
   border-radius: 50%;
   font-size: 19px;
-  border: 1px var(--primaryBorder) solid;
+  border: 2px var(--primaryBorder) solid;
   transition: 0.3s;
 }
 
@@ -102,7 +102,7 @@ header {
 .rating li:hover,
 .num-display {
   background: var(--secondaryBackground);
-  color: var(--primaryFont);
+  color: var(--secondaryFont);
 }
 
 [type="radio"] {
