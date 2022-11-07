@@ -55,7 +55,7 @@ header {
   background-color: var(--tertiaryBackground);
   color: var(--primaryFont);
   border-radius: 5px;
-  padding: 40px 20px;
+  padding: 30px 20px;
   margin: 20px 0;
   position: relative;
 }
@@ -76,7 +76,7 @@ header {
 .rating li,
 .num-display {
   position: relative;
-  background: #f4f4f4;
+  background: var(--primaryBackground);
   width: 50px;
   height: 50px;
   padding: 10px;
@@ -105,13 +105,17 @@ header {
   color: var(--secondaryFont);
 }
 
+.text-display {
+  margin-left: 20px;
+}
+
 [type="radio"] {
   opacity: 0;
 }
 
 [type="radio"]:checked ~ label {
-  background: #ff6a95;
-  color: #fff;
+  background: var(--secondaryBackground);
+  color: var(--secondaryFont);
 }
 
 .input-group {
@@ -169,17 +173,17 @@ input:focus {
 }
 
 .btn {
-  color: #fff;
+  color: var(--primaryFont);
   border: 0;
-  border-radius: 8px;
-  color: #fff;
-  width: 100px;
+  border-radius: 5px;
+  width: 50px;
   height: 40px;
   cursor: pointer;
+  margin-left: 5px;
 }
 
 .btn-primary {
-  background-color: #202142;
+  background-color: var(--secondaryBackground);
 }
 
 .btn-secondary {
@@ -187,25 +191,24 @@ input:focus {
 }
 
 .btn:hover {
-  transform: scale(0.98);
-  opacity: 0.9;
+  transform: scale(0.9);
+  opacity: 0.8;
 }
 
 .btn:disabled {
-  background-color: #cccccc;
-  color: #333;
+  opacity: 0.7;
   cursor: auto;
 }
 
 .btn:disabled:hover {
   transform: scale(1);
-  opacity: 1;
 }
 
 .message {
-  padding-top: 10px;
+  margin-top: 15px;
   text-align: center;
-  color: rebeccapurple;
+  color: var(--secondaryFont);
+  font-style: italic;
 }
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
