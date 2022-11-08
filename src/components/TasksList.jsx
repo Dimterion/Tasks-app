@@ -1,8 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { PropTypes } from "prop-types";
+import { useContext } from "react";
 import TaskItem from "./TaskItem";
+import TasksContext from "../context/TasksContext";
 
-function TasksList({ tasks, handleDelete }) {
+function TasksList() {
+  const { tasks } = useContext(TasksContext);
+
   if (!tasks || tasks.length === 0) {
     return <p>No tasks yet.</p>;
   }
@@ -32,26 +35,12 @@ function TasksList({ tasks, handleDelete }) {
             exit={{ opacity: 0 }}
             layout
           >
-            <TaskItem
-              key={taskItem.id}
-              taskItem={taskItem}
-              handleDelete={handleDelete}
-            />
+            <TaskItem key={taskItem.id} taskItem={taskItem} />
           </motion.div>
         ))}
       </AnimatePresence>
     </div>
   );
 }
-
-TasksList.propTypes = {
-  tasks: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      text: PropTypes.string.isRequired,
-      rating: PropTypes.number.isRequired,
-    })
-  ),
-};
 
 export default TasksList;

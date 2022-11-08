@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import RatingSelect from "./RatingSelect";
 import Card from "./shared/Card";
 import Button from "./shared/Button";
+import TasksContext from "../context/TasksContext";
 
-function TaskForm({ handleAdd }) {
+function TaskForm() {
   const [text, setText] = useState("");
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
+
+  const { addTask } = useContext(TasksContext);
 
   const handleTextChange = ({ target: { value } }) => {
     if (value === "") {
@@ -32,7 +35,7 @@ function TaskForm({ handleAdd }) {
         rating,
       };
 
-      handleAdd(newTask);
+      addTask(newTask);
 
       setText("");
       setRating(10);

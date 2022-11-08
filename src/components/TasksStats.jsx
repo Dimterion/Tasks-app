@@ -1,6 +1,9 @@
-import { PropTypes } from "prop-types";
+import { useContext } from "react";
+import TasksContext from "../context/TasksContext";
 
-function TasksStats({ tasks }) {
+function TasksStats() {
+  const {tasks} = useContext(TasksContext)
+
   // Calculate avg rating
   let average =
     tasks.reduce((acc, cur) => {
@@ -16,9 +19,5 @@ function TasksStats({ tasks }) {
     </div>
   );
 }
-
-TasksStats.propTypes = {
-  tasks: PropTypes.array.isRequired,
-};
 
 export default TasksStats;
