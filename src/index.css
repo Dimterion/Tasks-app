@@ -7,6 +7,7 @@
   --primaryBackground: #2b2d42;
   --secondaryBackground: #22223b;
   --tertiaryBackground: #4a4e69;
+  --quaternaryBackground: #ff006e;
 
   /* Fonts */
   --primaryFont: #edf2f4;
@@ -79,7 +80,6 @@ header {
   background: var(--primaryBackground);
   width: 50px;
   height: 50px;
-  padding: 10px;
   text-align: center;
   border-radius: 50%;
   font-size: 19px;
@@ -93,16 +93,25 @@ header {
   left: 50%;
   width: 50px;
   height: 50px;
-  padding: 10px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .rating li:hover,
 .num-display {
-  background: var(--secondaryBackground);
-  color: var(--secondaryFont);
+  background: var(--quaternaryBackground);
+  color: var(--primaryFont);
+}
+
+.num-display {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .text-display {
@@ -114,8 +123,9 @@ header {
 }
 
 [type="radio"]:checked ~ label {
-  background: var(--secondaryBackground);
-  color: var(--secondaryFont);
+  background: var(--quaternaryBackground);
+  color: var(--primaryFont);
+  border: 2px var(--primaryBorder) solid;
 }
 
 .input-group {

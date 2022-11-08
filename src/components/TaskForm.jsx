@@ -3,7 +3,7 @@ import RatingSelect from "./RatingSelect";
 import Card from "./shared/Card";
 import Button from "./shared/Button";
 
-function TaskForm() {
+function TaskForm({ handleAdd }) {
   const [text, setText] = useState("");
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
@@ -24,9 +24,25 @@ function TaskForm() {
     setText(value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text.trim().length >= 5) {
+      const newTask = {
+        text,
+        rating,
+      };
+
+      handleAdd(newTask);
+
+      setText("");
+      setRating(10);
+      setBtnDisabled(true);
+    }
+  };
+
   return (
     <Card>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Add new task</h2>
         <RatingSelect select={setRating} selected={rating} />
         <div className="input-group">
