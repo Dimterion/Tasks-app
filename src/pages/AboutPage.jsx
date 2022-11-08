@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom";
 import Card from "../components/shared/Card";
 
 function AboutPage() {
   return (
     <Card>
       <div className="about">
-        <h1>About this project</h1>
-        <p>Task app</p>
+        <h2>About this app</h2>
+        <p>This is an application to set/edit/delete tasks</p>
         <p>Version: 1.0.0</p>
-        <p></p>
+        <p>
+          <Link to="/">Home page</Link>
+        </p>
       </div>
     </Card>
   );

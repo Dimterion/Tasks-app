@@ -1,12 +1,15 @@
 import { FaQuestion } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function AboutIconLink() {
   return (
     <div className="about-link">
-      <Link to="/about">
+      <NavLink
+        to="/about"
+        className={({ isActive }) => (isActive ? "active" : null)}
+      >
         <FaQuestion size={30} />
-      </Link>
+      </NavLink>
     </div>
   );
 }
