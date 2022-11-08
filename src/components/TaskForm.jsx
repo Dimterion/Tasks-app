@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import RatingSelect from "./RatingSelect";
 import Card from "./shared/Card";
 import Button from "./shared/Button";
@@ -10,7 +10,15 @@ function TaskForm() {
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
 
-  const { addTask } = useContext(TasksContext);
+  const { addTask, tasksEdit, updateTask } = useContext(TasksContext);
+
+  useEffect(() => {
+    if (tasksEdit.edit === true) {
+      setBtnDisabled(false);
+      setText(tasksEdit.task.text);
+      setRating(tasksEdit.task.rating);
+    }
+  }, [tasksEdit]);
 
   const handleTextChange = ({ target: { value } }) => {
     if (value === "") {
@@ -35,7 +43,11 @@ function TaskForm() {
         rating,
       };
 
-      addTask(newTask);
+      if (tasksEdit.edit === true) {
+        updateTask(tasksEdit.task.id, newTask);
+      } else {
+        addTask(newTask);
+      }
 
       setText("");
       setRating(10);
