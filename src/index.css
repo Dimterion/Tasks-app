@@ -264,7 +264,7 @@ input:focus {
   .about-link {
     position: unset;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
 }
 
