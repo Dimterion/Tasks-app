@@ -28,7 +28,7 @@ body {
   font-family: "Inter", sans-serif;
   background-color: var(--primaryBackground);
   color: var(--primaryFont);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 a {
@@ -97,7 +97,7 @@ header {
 }
 
 .text-display {
-  margin-left: 20px;
+  margin: 15px;
 }
 
 [type="radio"] {
@@ -180,13 +180,9 @@ input:focus {
   background-color: var(--secondaryBackground);
 }
 
-.btn-secondary {
-  background: #ff6a95;
-}
-
 .btn:hover {
   transform: scale(0.9);
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .btn:disabled {
@@ -205,8 +201,6 @@ input:focus {
   font-style: italic;
 }
 
-/* FIX: Remove position: absolute to keep about icon at the bottom of the
- * document */
 .about-link {
   position: fixed;
   bottom: 0;
@@ -214,8 +208,6 @@ input:focus {
   margin: 5px 10px;
 }
 
-/* FIX: Remove position: absolute to keep about icon at the bottom of the
- * document */
 .about-link a {
   color: var(--primaryFont);
   cursor: pointer;
@@ -236,6 +228,8 @@ input:focus {
 .about p {
   margin: 10px 0;
 }
+
+/* Small screens adjustments */
 
 @media (max-width: 850px) {
   .about-link {

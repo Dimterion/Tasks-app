@@ -24,15 +24,17 @@ export const TasksProvider = ({ children }) => {
 
   // Delete task
   const deleteTask = (id) => {
-    if (window.confirm("Are you sure you want to delete task?")) {
+    if (window.confirm("Are you sure you want to delete this task?")) {
       setTasks(tasks.filter((task) => task.id !== id));
+
       setTasksEdit({
+        task: {},
         edit: false,
       });
     }
   };
 
-  //Update task
+  // Update task
   const updateTask = (id, updTask) => {
     setTasks(
       tasks.map((task) => (task.id === id ? { ...task, ...updTask } : task))
@@ -52,6 +54,13 @@ export const TasksProvider = ({ children }) => {
     });
   };
 
+  // Clear all tasks
+  const clearTasks = () => {
+    if (window.confirm("Are you sure you want to delete all tasks?")) {
+      setTasks([]);
+    }
+  };
+
   return (
     <TasksContext.Provider
       value={{
@@ -61,6 +70,7 @@ export const TasksProvider = ({ children }) => {
         addTask,
         editTask,
         updateTask,
+        clearTasks,
       }}
     >
       {children}

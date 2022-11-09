@@ -21,7 +21,11 @@ function TasksList() {
             exit={{ opacity: 0 }}
             layout
           >
-            <TaskItem key={taskItem.id} taskItem={taskItem} taskNumber={tasks.indexOf(taskItem) + 1} />
+            <TaskItem
+              key={taskItem.id}
+              taskItem={taskItem}
+              taskNumber={tasks.indexOf(taskItem) + 1}
+            />
           </motion.div>
         ))}
       </AnimatePresence>
