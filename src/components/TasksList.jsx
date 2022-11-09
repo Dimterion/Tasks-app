@@ -10,20 +10,6 @@ function TasksList() {
     return <p>No tasks yet.</p>;
   }
 
-  // Without animation:
-  // return (
-  //   <div>
-  //     {tasks.map((taskItem) => (
-  //       <TaskItem
-  //         key={taskItem.id}
-  //         taskItem={taskItem}
-  //         handleDelete={handleDelete}
-  //       />
-  //     ))}
-  //   </div>
-  // );
-
-  // With animation:
   return (
     <div>
       <AnimatePresence>
@@ -35,7 +21,7 @@ function TasksList() {
             exit={{ opacity: 0 }}
             layout
           >
-            <TaskItem key={taskItem.id} taskItem={taskItem} />
+            <TaskItem key={taskItem.id} taskItem={taskItem} taskNumber={tasks.indexOf(taskItem) + 1} />
           </motion.div>
         ))}
       </AnimatePresence>

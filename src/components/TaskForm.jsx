@@ -1,12 +1,10 @@
 import { useState, useContext, useEffect } from "react";
-import RatingSelect from "./RatingSelect";
 import Card from "./shared/Card";
 import Button from "./shared/Button";
 import TasksContext from "../context/TasksContext";
 
 function TaskForm() {
   const [text, setText] = useState("");
-  const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
 
@@ -16,7 +14,6 @@ function TaskForm() {
     if (tasksEdit.edit === true) {
       setBtnDisabled(false);
       setText(tasksEdit.task.text);
-      setRating(tasksEdit.task.rating);
     }
   }, [tasksEdit]);
 
@@ -40,7 +37,6 @@ function TaskForm() {
     if (text.trim().length >= 5) {
       const newTask = {
         text,
-        rating,
       };
 
       if (tasksEdit.edit === true) {
@@ -50,7 +46,6 @@ function TaskForm() {
       }
 
       setText("");
-      setRating(10);
       setBtnDisabled(true);
     }
   };
@@ -59,7 +54,6 @@ function TaskForm() {
     <Card>
       <form onSubmit={handleSubmit}>
         <h2>Add new task</h2>
-        <RatingSelect select={setRating} selected={rating} />
         <div className="input-group">
           <input
             onChange={handleTextChange}
