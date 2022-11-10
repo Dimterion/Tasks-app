@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import TasksContext from "../context/TasksContext";
+import Button from "./shared/Button";
 
 function TasksStats() {
   const { tasks, clearTasks } = useContext(TasksContext);
@@ -9,7 +10,13 @@ function TasksStats() {
       <h4>
         {tasks.length} {tasks.length === 1 ? "task" : "tasks"}
       </h4>
-      <button onClick={() => clearTasks()}>Clear all</button>
+      <Button
+        version={"secondary"}
+        isDisabled={tasks.length > 0 ? false : true}
+        handleClick={clearTasks}
+      >
+        Clear tasks
+      </Button>
     </div>
   );
 }

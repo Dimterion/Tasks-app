@@ -1,8 +1,13 @@
 import PropTypes from "prop-types";
 
-function Button({ children, version, type, isDisabled }) {
+function Button({ children, version, type, isDisabled, handleClick }) {
   return (
-    <button type={type} disabled={isDisabled} className={`btn btn-${version}`}>
+    <button
+      onClick={handleClick}
+      type={type}
+      disabled={isDisabled}
+      className={`btn btn-${version}`}
+    >
       {children}
     </button>
   );
@@ -19,6 +24,7 @@ Button.propTypes = {
   version: PropTypes.string,
   type: PropTypes.string,
   isDisabled: PropTypes.bool,
+  handleClick: PropTypes.func,
 };
 
 export default Button;

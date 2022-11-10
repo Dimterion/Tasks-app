@@ -174,10 +174,15 @@ input:focus {
   height: 40px;
   cursor: pointer;
   margin-left: 5px;
+  font-size: 0.9rem;
 }
 
 .btn-primary {
   background-color: var(--secondaryBackground);
+}
+
+.btn-secondary {
+  background-color: var(--quaternaryBackground);
 }
 
 .btn:hover {
