@@ -8,7 +8,7 @@ function TaskForm() {
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
 
-  const { addTask, tasksEdit, updateTask } = useContext(TasksContext);
+  const { addTask, tasksEdit, updateTasks } = useContext(TasksContext);
 
   useEffect(() => {
     if (tasksEdit.edit === true) {
@@ -40,7 +40,7 @@ function TaskForm() {
       };
 
       if (tasksEdit.edit === true) {
-        updateTask(tasksEdit.task.id, newTask);
+        updateTasks(tasksEdit.task.id, newTask);
       } else {
         addTask(newTask);
       }

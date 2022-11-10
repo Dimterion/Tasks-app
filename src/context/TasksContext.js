@@ -34,8 +34,8 @@ export const TasksProvider = ({ children }) => {
     }
   };
 
-  // Update task
-  const updateTask = (id, updTask) => {
+  // Update tasks
+  const updateTasks = (id, updTask) => {
     setTasks(
       tasks.map((task) => (task.id === id ? { ...task, ...updTask } : task))
     );
@@ -69,7 +69,7 @@ export const TasksProvider = ({ children }) => {
         deleteTask,
         addTask,
         editTask,
-        updateTask,
+        updateTasks,
         clearTasks,
       }}
     >
