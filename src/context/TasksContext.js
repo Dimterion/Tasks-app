@@ -1,15 +1,21 @@
 import { v4 as uuidv4 } from "uuid";
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const TasksContext = createContext();
 
 export const TasksProvider = ({ children }) => {
-  const [tasks, setTasks] = useState([
-    {
-      id: uuidv4(),
-      text: "Add your task",
-    },
-  ]);
+  // Get tasks from local storage
+  const getLocalTask = () => {
+    let tasksList = localStorage.getItem("tasks");
+    
+    if (tasksList) {
+      return JSON.parse(tasksList);
+    } else {
+      return [];
+    }
+  };
+
+  const [tasks, setTasks] = useState(getLocalTask);
 
   const [tasksEdit, setTasksEdit] = useState({
     task: {},
@@ -60,6 +66,11 @@ export const TasksProvider = ({ children }) => {
       setTasks([]);
     }
   };
+
+  // Add tasks to local storage
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <TasksContext.Provider
