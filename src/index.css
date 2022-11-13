@@ -162,6 +162,14 @@ input:focus {
   font-size: 1.25rem;
 }
 
+.close:hover {
+  transform: scale(0.9);
+}
+
+.edit:hover {
+  transform: scale(0.9);
+}
+
 .edit {
   right: 35px;
 }
@@ -175,6 +183,7 @@ input:focus {
   cursor: pointer;
   margin-left: 5px;
   font-size: 0.9rem;
+  transition: 0.5s;
 }
 
 .btn-primary {
@@ -188,6 +197,7 @@ input:focus {
 .btn:hover {
   transform: scale(0.9);
   opacity: 0.9;
+  transition: 0.5s;
 }
 
 .btn:disabled {
@@ -216,10 +226,12 @@ input:focus {
 .about-link a {
   color: var(--primaryFont);
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .about-link a:hover {
   color: var(--secondaryFont);
+  transition: 0.5s;
 }
 
 .active path {

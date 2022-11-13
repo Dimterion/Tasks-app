@@ -7,7 +7,7 @@ export const TasksProvider = ({ children }) => {
   // Get tasks from local storage
   const getLocalTask = () => {
     let tasksList = localStorage.getItem("tasks");
-    
+
     if (tasksList) {
       return JSON.parse(tasksList);
     } else {
