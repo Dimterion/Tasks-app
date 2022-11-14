@@ -178,7 +178,7 @@ input:focus {
   color: var(--primaryFont);
   border: 0;
   border-radius: 5px;
-  width: 50px;
+  width: 60px;
   height: 40px;
   cursor: pointer;
   margin-left: 5px;

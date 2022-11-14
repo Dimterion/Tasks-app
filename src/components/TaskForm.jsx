@@ -62,7 +62,7 @@ function TaskForm() {
             value={text}
           />
           <Button type="submit" isDisabled={btnDisabled}>
-            Add
+            {tasksEdit.edit ? "Update" : "Add"}
           </Button>
         </div>
         {message && <div className="message">{message}</div>}

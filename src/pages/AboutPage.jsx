@@ -6,8 +6,8 @@ function AboutPage() {
     <Card>
       <div className="about">
         <h2>About this app</h2>
-        <p>This is an application to set/edit/delete tasks</p>
-        <p>Version: 1.0.0</p>
+        <p>This is an application to set / edit / delete tasks</p>
+        <b>Version: 1.5</b>
         <p>
           <Link to="/">Home page</Link>
         </p>

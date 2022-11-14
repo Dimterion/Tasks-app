@@ -14,7 +14,7 @@ function Header({ text }) {
 }
 
 Header.defaultProps = {
-  text: "Projects",
+  text: "Tasks App",
 };
 
 Header.propTypes = {

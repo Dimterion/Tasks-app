@@ -64,6 +64,11 @@ export const TasksProvider = ({ children }) => {
   const clearTasks = () => {
     if (window.confirm("Are you sure you want to delete all tasks?")) {
       setTasks([]);
+
+      setTasksEdit({
+        task: {},
+        edit: false,
+      });
     }
   };
 

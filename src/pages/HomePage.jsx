@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
+import TaskForm from "../components/TaskForm";
+import TasksStats from "../components/TasksStats";
+import TasksList from "../components/TasksList";
+import { TasksProvider } from "../context/TasksContext";
 
 function HomePage() {
   return (
-    <div>
-      <Link to="/tasks">Tasks App</Link>
-    </div>
+    <TasksProvider>
+      <TaskForm />
+      <TasksStats />
+      <TasksList />
+    </TasksProvider>
   );
 }
 
