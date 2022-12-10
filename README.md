@@ -2,7 +2,7 @@
 
 A React application to set / edit / delete tasks.
 
-## Live Demo
+## Live version
 
 [Tasks App](https://tasks-app-hazel.vercel.app/)
 
