@@ -2,13 +2,13 @@
 
 A React application to set / edit / delete tasks.
 
-## Live version
+## Live Version
 
 [Tasks App](https://tasks-app-hazel.vercel.app/)
 
 ## Details
 
-After making a [Feedback app](https://github.com/Dimterion/Feedback-app) I've decided to play around with its code and remake it into something else.
+After making a [Feedback App](https://github.com/Dimterion/Feedback-app) I've decided to play around with its code and remake it into something else.
 
 It ended up being this Tasks App to keep track of your ToDos, edit and delete them.
 
